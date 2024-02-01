@@ -1,30 +1,23 @@
 "use client";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { useEffect } from "react";
-import Lenis from "@studio-freight/lenis/types";
+import SmoothScrolling from "./components/SmoothScrolling";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
-  // useEffect(() => {
-  //   const lenis = new Lenis();
+}) {
 
-  //   function raf(time: any) {
-  //     lenis?.raf(time);
-  //     requestAnimationFrame(raf);
-  //   }
-
-  //   requestAnimationFrame(raf);
-  // }, []);
 
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {" "}
+        <SmoothScrolling>{children}</SmoothScrolling>
+      </body>
     </html>
   );
 }
