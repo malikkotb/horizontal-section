@@ -40,12 +40,25 @@ export default function HorizontalScroll() {
       {/* we can follow our viewport as we scroll further down, by setting position sticky and top-0
         => when we scroll, the below div stays in view until we reach the bottom of the outer component */}
       <div className="h-screen sticky top-0 flex items-center overflow-hidden">
-        <motion.div style={{ x: x, scale: (scale) }} className="flex gap-4">
+        {/* <motion.div style={{ x: x, scale: (scale) }} className="flex gap-4">
           {images.map((Image, index) => (
             <Card key={index} image={Image} />
           ))}
+        </motion.div> */}
+        <motion.div className="flex gap-4" style={{ x }}>
+          {images.map((Image, index) => {
+            // we only want the zoom effect to happen on the last image only
+            const isLastImage = index === images.length - 1;
+            return (
+              <motion.div 
+                key={index} 
+                style={isLastImage ? { scale } : {}}
+              >
+                <Card image={Image} />
+              </motion.div>
+            );
+          })}
         </motion.div>
-        
       </div>
     </section>
   );
