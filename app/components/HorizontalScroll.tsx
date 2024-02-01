@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { cards } from "./cards";
 import { Card } from "./Card";
-export default function HorizontalSCroll() {
+export default function HorizontalScroll() {
   const targetRef = useRef(null);
 
   const { scrollYProgress } = useScroll({ // will return progress of scrolling vertically on the section
@@ -11,7 +11,8 @@ export default function HorizontalSCroll() {
   });
 
   // takes motionValue, array of values to map FROM, array of values to map TO, 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]) // apply this on div which is to be animated
+//   const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]) // apply this on div which is to be animated
+  const x = useTransform(scrollYProgress, [0, 1], ["5%", "-70%"]) 
 
   return (
     // height of 300vh to have lots of room for scrolling
