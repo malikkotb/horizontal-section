@@ -1,30 +1,18 @@
-type CardType = {
-  url: string;
-  title: string;
-  id: number;
-};
+import Image, { StaticImageData } from "next/image";
 
-export const Card = ({ card }: { card: CardType }) => {
+// For using the palceholder="blur" property -> need to import the images statically
+
+export const Card = ({ image }: { image: StaticImageData }) => {
   return (
     <div
-      key={card.id}
-      className="group relative h-[450px] w-[450px] overflow-hidden rounded-lg"
+      className="relative h-[25vh] w-[25vw] overflow-hidden"
     >
-      <div
-        style={{
-          backgroundImage: `url(${card.url})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-        //   group-hover:scale-110 transition-transform duration-300
-        className="absolute inset-0 z-0 rounded-lg 
-          "
-      ></div>
-      {/* <div className="absolute inset-0 z-10 grid place-content-center">
-          <p className="bg-gradient-to-br from-white/20 to-white/0 p-8 text-6xl font-black uppercase text-white backdrop-blur-lg">
-            {card.title}
-          </p>
-        </div> */}
+      <Image
+        src={image} // static Image source
+        alt="Description" 
+        placeholder="blur"
+        width={500}
+      />
     </div>
   );
 };
