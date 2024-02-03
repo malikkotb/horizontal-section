@@ -25,12 +25,11 @@ export default function HorizontalScroll() {
   const { scrollYProgress } = useScroll({
     // will return progress of scrolling vertically on the section
     target: targetRef,
-    offset: ["start start", "end end"]
+    offset: ["start start", "end end"],
   });
 
   // takes motionValue, array of values to map FROM, array of values to map TO,
-  //   const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]) // apply this on div which is to be animated
-  const x = useTransform(scrollYProgress, [0, 1], ["5%", "-65%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-65%"]);
 
   return (
     // height of 300vh to have lots of room for scrolling
@@ -38,13 +37,27 @@ export default function HorizontalScroll() {
     <section ref={targetRef} className=" h-[300vh]">
       {/* we can follow our viewport as we scroll further down, by setting position sticky and top-0
         => when we scroll, the below div stays in view until we reach the bottom of the outer component */}
-      <div className="h-screen sticky top-0 flex items-center overflow-hidden">
-        <motion.div style={{ x: x }} className="flex gap-4">
-          {images.map((Image, index) => (
+      <div className="h-[80vh] pt-[10vh] sticky top-0 flex items-center overflow-hidden">
+        <motion.div style={{ x: x }} className="flex gap-24">
+          <div className="intro w-[80vw] h-full flex flex-col flex-shrink-0">
+            <div className="header flex items-start gap-5 whitespace-normal">
+              <h2 className="text-4xl">Lorem ipsum</h2>
+              <p>
+                Sed neque purus, imperdiet eu purus sit amet, hendrerit semper
+                quam. Praesent elementum, nisl sit amet tincidunt tincidunt, ex
+                tortor cursus lorem, non tempus purus libero et metus.
+              </p>
+            </div>
+          </div>
+          <Card key={1} image={Picture1} />
+          <Card key={2} image={Picture2} />
+          <Card key={3} image={Picture3} />
+          <Card key={4} image={Picture4} />
+
+          {/* {images.map((Image, index) => (
             <Card key={index} image={Image} />
-          ))}
+          ))} */}
         </motion.div>
-        
       </div>
     </section>
   );

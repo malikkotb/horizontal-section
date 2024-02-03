@@ -5,7 +5,7 @@ import Image, { StaticImageData } from "next/image";
 export const Card = ({ image }: { image: StaticImageData }) => {
   return (
     <div
-      className="relative h-[25vh] w-[25vw] overflow-hidden"
+      className="relative h-[50vh] w-[50vw] overflow-hidden"
     >
       <Image
         src={image} // static Image source
