@@ -1,4 +1,4 @@
-import { DM_Serif_Display } from "next/font/google";
+import { DM_Serif_Display, Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScrolling from "./components/SmoothScrolling";
 

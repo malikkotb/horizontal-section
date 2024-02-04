@@ -2,26 +2,15 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Card } from "./Card";
-import Picture1 from "../../public/1.jpg";
+import Image from "next/image";
 import Picture2 from "../../public/2.jpg";
 import Picture3 from "../../public/3.jpg";
-import Picture4 from "../../public/4.jpg";
-import Picture5 from "../../public/5.jpg";
-import Picture6 from "../../public/6.jpg";
-import Picture7 from "../../public/7.jpg";
-import Picture11 from "../../public/11.jpg";
+import Picture24 from "../../public/24.jpeg";
+import Picture25 from "../../public/25.jpeg";
+import Picture26 from "../../public/26.jpeg";
+import Picture27 from "../../public/27.jpeg";
+import Picture16 from "../../public/16.jpg";
 
-import Image from "next/image";
-
-const images = [
-  Picture1,
-  Picture2,
-  Picture3,
-  Picture4,
-  Picture5,
-  Picture6,
-  Picture7,
-];
 
 export default function HorizontalScroll() {
   const targetRef = useRef(null);
@@ -32,7 +21,7 @@ export default function HorizontalScroll() {
   });
 
   // takes motionValue, array of values to map FROM, array of values to map TO,
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-68%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-70%"]);
 
   return (
     // height of 300vh to have lots of room for scrolling
@@ -55,7 +44,7 @@ export default function HorizontalScroll() {
             </div>
             <div className="relative h-[70vh] w-[80vw] overflow-hidden">
               <Image
-                src={Picture1} // static Image source
+                src={Picture25} // static Image source
                 alt="Description"
                 placeholder="blur"
                 fill
@@ -63,8 +52,8 @@ export default function HorizontalScroll() {
             </div>
           </div>
           <div className="flex gap-5">
-            <Card key={2} image={Picture2} />
-            <Card key={3} image={Picture3} />
+            <Card key={2} image={Picture26} />
+            <Card key={3} image={Picture27} />
           </div>
           <div className="h-[75vh] w-[30vw] flex items-center justify-center flex-shrink-0">
             <p>
@@ -78,15 +67,15 @@ export default function HorizontalScroll() {
           <div className="flex gap-12 w-[60vw] flex-shrink-0">
             <div className="relative h-[30%] w-[40%] overflow-hidden">
               <Image
-                src={Picture4} // static Image source
+                src={Picture24}
                 alt="Description"
                 placeholder="blur"
                 fill
               />
             </div>
-            <div className="relative h-[full] w-[40%] overflow-hidden">
+            <div className="relative h-[full] w-[50%] overflow-hidden">
               <Image
-                src={Picture5} // static Image source
+                src={Picture16} 
                 alt="Description"
                 placeholder="blur"
                 fill
