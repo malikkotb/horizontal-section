@@ -10,7 +10,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={serif.className}>
+      <body className={`${serif.className} bg-[#F4F4F4]`}>
         <SmoothScrolling>{children}</SmoothScrolling>
       </body>
     </html>

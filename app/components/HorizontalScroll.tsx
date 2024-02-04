@@ -9,6 +9,8 @@ import Picture4 from "../../public/4.jpg";
 import Picture5 from "../../public/5.jpg";
 import Picture6 from "../../public/6.jpg";
 import Picture7 from "../../public/7.jpg";
+import Picture11 from "../../public/11.jpg";
+
 import Image from "next/image";
 
 const images = [
@@ -30,7 +32,7 @@ export default function HorizontalScroll() {
   });
 
   // takes motionValue, array of values to map FROM, array of values to map TO,
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-65%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-68%"]);
 
   return (
     // height of 300vh to have lots of room for scrolling
@@ -41,7 +43,7 @@ export default function HorizontalScroll() {
       <div className="h-[80vh] pt-[10vh] sticky top-0 flex items-center overflow-hidden">
         <motion.div style={{ x: x }} className="flex gap-24">
           <div className="intro w-[80vw] h-full flex flex-col flex-shrink-0">
-            <div className="flex  gap-5 whitespace-normal">
+            <div className="flex gap-5 whitespace-normal">
               <h2 className="text-[40px] m-0 w-full whitespace-nowrap">
                 Lorem ipsum
               </h2>
@@ -73,7 +75,7 @@ export default function HorizontalScroll() {
               ipsum elementum mattis. In vel sagittis velit.
             </p>
           </div>
-          <div className="flex gap-12 w-[60vw] flex-shrink-0 mr-[200px]">
+          <div className="flex gap-12 w-[60vw] flex-shrink-0">
             <div className="relative h-[30%] w-[40%] overflow-hidden">
               <Image
                 src={Picture4} // static Image source
